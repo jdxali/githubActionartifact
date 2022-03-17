@@ -1,0 +1,30 @@
+name: challenge-workflow
+
+on: [push]
+
+jobs:
+  test:
+   name:    test
+   runs-on: ubuntu-latest
+
+   steps:
+   - name: code check out
+   - uses: actions/checkout@v2
+
+   - name: run python
+   - run: python hello.py
+
+  build:
+   needs: [test]
+   name:    build
+   runs-on: ubuntu-latest
+
+   steps:
+   - name: code check out
+   - uses: actions/checkout@v2
+
+   - name: upload artifacts 
+   - uses: actions/upload-artifact@v1.0.0
+     with:
+         name: hello
+         path: .
