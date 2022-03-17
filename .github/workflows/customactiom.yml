@@ -1,0 +1,12 @@
+name: custom
+on: [push]
+jobs:
+  test2:
+    name: test2
+    runs-on:ubuntu
+    steps:
+      - name: checking custom action
+        uses: uses: actions/checkout@v2
+        
+      - uses: jdx/customActions@main
+      
