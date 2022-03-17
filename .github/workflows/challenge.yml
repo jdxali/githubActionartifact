@@ -9,7 +9,7 @@ jobs:
 
    steps:
    - name: code check out
-   - uses: actions/checkout@v2
+     uses: actions/checkout@v2
 
    - name: run python
    - run: python hello.py
@@ -21,10 +21,10 @@ jobs:
 
    steps:
    - name: code check out
-   - uses: actions/checkout@v2
+     uses: actions/checkout@v2
 
    - name: upload artifacts 
-   - uses: actions/upload-artifact@v1.0.0
+     uses: actions/upload-artifact@v1.0.0
      with:
          name: hello
          path: .
